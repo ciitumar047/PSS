@@ -9,13 +9,13 @@
           <div class="form-group col-12">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="userName">
-            <span *ngIf="userName.invalid && userName.touched" class="error-block">Please provide a name.</span>
+            <span *ngIf="userName.invalid && (userName.touched || userSubmitted)" class="error-block">Please provide a name.</span>
           </div>
 
           <div class="form-group col-12">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" formControlName="email">
-            <span *ngIf="email.invalid && email.touched" class="error-block">
+            <span *ngIf="email.invalid && (email.touched ||userSubmitted)" class="error-block">
             <span *ngIf="email.hasError('required')"> please provide email </span>
             <span *ngIf="email.hasError('email')">please provide valid email</span>
             </span>
@@ -24,7 +24,7 @@
           <div class="form-group col-12">
             <label for="password" class="form-label">Password</label>
             <input type="text" class="form-control" formControlName="password">
-            <span *ngIf="password.invalid && password.touched" class="error-block">
+            <span *ngIf="password.invalid && (password.touched || userSubmitted)" class="error-block">
               <span *ngIf="password.errors?.['required']">Please provide a password</span>
               <span *ngIf="password.errors?.['minlength']">Please provide a valid password</span>
             </span>
@@ -33,7 +33,7 @@
           <div class="form-group col-12">
             <label for="confirmPassword" class="form-label">Confirm Password</label>
             <input type="text" class="form-control" formControlName="confirmPassword">
-            <span *ngIf="confirmPassword.invalid && confirmPassword.touched" class="error-block">
+            <span *ngIf="confirmPassword.invalid && (confirmPassword.touched || userSubmitted)" class="error-block">
               <span *ngIf="confirmPassword.hasError('required')">Please confirm the password</span>
               <span *ngIf="registrationForm.hasError('notmatched') && confirmPassword.invalid">Password not matched</span>
             </span>

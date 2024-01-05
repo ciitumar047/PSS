@@ -34,8 +34,7 @@ const appRoutes: Routes = [ // Define as an array of Routes
     AddPropertyComponent,
     PropertyDetailComponent,
     UserRegisterComponent,
-    UserLoginComponent,
-    UserServiceService
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +44,8 @@ const appRoutes: Routes = [ // Define as an array of Routes
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserServiceService
   ],
   bootstrap: [AppComponent]
 })

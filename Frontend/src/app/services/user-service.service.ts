@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class UserServiceService {
   constructor() { }
 
 
-  addUser(user: any) {
+  addUser(user: User) {
     let users = [];
     // Check if 'Users' exists in local storage and if it's a string.
     const storedUsers = localStorage.getItem('Users');
